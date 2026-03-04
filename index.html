@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Block 13 FB Area RWA</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --g900: #1B5E20; --g800: #2E7D32; --g700: #388E3C; --g400: #66BB6A;
+      --g100: #E8F5E9; --g50: #F1F8F2; --gborder: #C8E6C9;
+      --red: #B71C1C; --red-light: #FFEBEE; --red-border: #FFCDD2;
+      --text: #111827; --text2: #4B5563; --text3: #9CA3AF;
+      --bg: #FFFFFF; --bg2: #F9FAFB; --border: #E5E7EB;
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg2); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+    /* HEADER */
+    .header { position: sticky; top: 0; z-index: 200; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .header-inner { max-width: 1040px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .brand-logo { width: 38px; height: 38px; border-radius: 9px; object-fit: contain; background: #000; padding: 2px; flex-shrink: 0; }
+    .brand-name { font-family: 'DM Serif Display', serif; font-size: 15px; color: var(--text); line-height: 1.2; white-space: nowrap; }
+    .brand-sub { font-size: 11px; color: var(--text3); font-weight: 400; margin-top: 1px; }
+    .nav { display: flex; align-items: center; gap: 6px; }
+    .nav-item { display: inline-flex; align-items: center; padding: 7px 16px; border-radius: 8px; font-size: 13px; font-weight: 500; border: 1px solid transparent; background: transparent; color: var(--text2); font-family: 'DM Sans', sans-serif; transition: all 0.18s ease; white-space: nowrap; text-decoration: none; }
+    .nav-item:hover { background: var(--g50); color: var(--g800); }
+    .nav-item.active { background: var(--g100); color: var(--g800); border-color: var(--gborder); font-weight: 600; }
+    .nav-item.danger { color: var(--red); }
+    .nav-item.danger:hover { background: var(--red-light); border-color: var(--red-border); }
+
+    /* HERO */
+    .hero { background: var(--bg); border-bottom: 1px solid var(--border); padding: 72px 24px 60px; text-align: center; position: relative; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--g900), var(--g400), var(--g900)); }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--g800); background: var(--g100); border: 1px solid var(--gborder); border-radius: 100px; padding: 5px 14px; margin-bottom: 24px; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5.5vw, 3.4rem); line-height: 1.15; font-weight: 400; color: var(--text); margin-bottom: 16px; }
+    .hero h1 .accent { color: var(--g800); }
+    .hero-desc { font-size: 15px; color: var(--text2); max-width: 460px; margin: 0 auto 28px; line-height: 1.7; }
+    .hero-meta { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .meta-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text3); font-weight: 500; }
+    .meta-item svg { width: 13px; height: 13px; fill: var(--g700); flex-shrink: 0; }
+
+    /* LAYOUT */
+    .wrap { max-width: 820px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* INTRO CARD */
+    .intro-card { background: var(--bg); border: 1px solid var(--border); border-left: 3px solid var(--g800); border-radius: var(--radius); padding: 26px 28px; margin-bottom: 24px; box-shadow: var(--shadow); }
+    .intro-card p { font-size: 14px; color: var(--text2); line-height: 1.75; }
+    .intro-card p + p { margin-top: 10px; }
+    .intro-card strong { color: var(--text); font-weight: 600; }
+
+    /* TOC */
+    .toc { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 26px; margin-bottom: 24px; box-shadow: var(--shadow); }
+    .toc-head { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--g800); display: flex; align-items: center; gap: 7px; margin-bottom: 14px; }
+    .toc-head svg { width: 13px; height: 13px; fill: var(--g800); }
+    .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
+    .toc-link { display: flex; align-items: center; gap: 10px; padding: 8px 0; color: var(--text2); text-decoration: none; font-size: 13px; font-weight: 500; border-bottom: 1px solid var(--border); transition: color 0.15s; }
+    .toc-link:hover { color: var(--g800); }
+    .toc-num { font-size: 10px; font-weight: 700; color: var(--g700); min-width: 20px; }
+    .toc-item:last-child .toc-link, .toc-item:nth-last-child(2) .toc-link { border-bottom: none; }
+
+    /* CARD */
+    .card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 10px; box-shadow: var(--shadow); overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; }
+    .card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+    .card-head { display: flex; align-items: center; gap: 14px; padding: 18px 22px; border-bottom: 1px solid var(--border); background: var(--bg2); }
+    .card-icon { width: 38px; height: 38px; border-radius: 9px; background: var(--g100); border: 1px solid var(--gborder); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .card-icon svg { width: 19px; height: 19px; fill: var(--g800); }
+    .card-label { font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--g700); margin-bottom: 2px; }
+    .card-title { font-family: 'DM Serif Display', serif; font-size: 17px; font-weight: 400; color: var(--text); }
+    .card-body { padding: 22px; }
+    .card-body p { font-size: 14px; color: var(--text2); line-height: 1.75; margin-bottom: 12px; }
+    .card-body p:last-child { margin-bottom: 0; }
+    .card-body p strong { color: var(--text); font-weight: 600; }
+
+    /* BULLET LIST */
+    .blist { list-style: none; margin-top: 10px; }
+    .blist li { display: flex; align-items: flex-start; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text2); line-height: 1.7; }
+    .blist li:last-child { border-bottom: none; padding-bottom: 0; }
+    .blist li .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--g700); flex-shrink: 0; margin-top: 9px; }
+    .blist li strong { color: var(--text); font-weight: 600; }
+
+    /* CTA */
+    .cta-card { background: var(--bg); border: 1px solid var(--gborder); border-radius: var(--radius); padding: 44px 40px; text-align: center; margin-top: 36px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+    .cta-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--g900), var(--g400), var(--g900)); }
+    .cta-icon { width: 48px; height: 48px; border-radius: 11px; background: var(--g100); border: 1px solid var(--gborder); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+    .cta-icon svg { width: 21px; height: 21px; fill: var(--g800); }
+    .cta-card h2 { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; color: var(--text); margin-bottom: 9px; }
+    .cta-card > p { font-size: 14px; color: var(--text2); max-width: 380px; margin: 0 auto 26px; line-height: 1.7; }
+    .cta-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 22px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 21px; border-radius: 9px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.18s; }
+    .btn svg { width: 14px; height: 14px; }
+    .btn-primary { background: var(--g800); color: #fff; }
+    .btn-primary svg { fill: #fff; }
+    .btn-primary:hover { background: var(--g900); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(46,125,50,0.28); }
+    .btn-outline { background: var(--bg); color: var(--g800); border: 1.5px solid var(--gborder); }
+    .btn-outline svg { fill: var(--g800); }
+    .btn-outline:hover { border-color: var(--g800); background: var(--g100); }
+    .cta-note { font-size: 12px; color: var(--text3); line-height: 1.8; }
+    .cta-note strong { color: var(--text2); font-weight: 600; }
+    .cta-note a { color: var(--g800); text-decoration: none; font-weight: 600; }
+    .cta-note a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 30px 24px; text-align: center; }
+    .footer-brand { display: inline-flex; align-items: center; gap: 9px; font-family: 'DM Serif Display', serif; font-size: 14px; color: var(--text); margin-bottom: 8px; }
+    .footer-brand img { width: 24px; height: 24px; border-radius: 5px; object-fit: contain; background: #000; padding: 1px; }
+    .footer-meta { font-size: 12px; color: var(--text3); }
+    .footer-meta a { color: var(--g800); text-decoration: none; font-weight: 500; }
+    .footer-meta a:hover { text-decoration: underline; }
+    .footer-meta span { margin: 0 7px; opacity: 0.35; }
+
+    /* RESPONSIVE */
+    @media (max-width: 720px) {
+      .header-inner { padding: 0 16px; height: 58px; }
+      .brand-sub { display: none; }
+      .brand-name { font-size: 13px; }
+      .nav-item { padding: 6px 11px; font-size: 12px; }
+      .hero { padding: 50px 20px 42px; }
+      .wrap { padding: 32px 16px 60px; }
+      .toc-grid { grid-template-columns: 1fr; }
+      .toc, .intro-card { padding: 20px; }
+      .card-head { padding: 15px 18px; }
+      .card-body { padding: 18px; }
+      .cta-card { padding: 34px 22px; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.8rem; }
+      .hero-meta { gap: 12px; }
+      .cta-btns { flex-direction: column; align-items: stretch; }
+      .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img src="icon.png" alt="Block 13 RWA" class="brand-logo" />
+      <div>
+        <div class="brand-name">Block 13 FB Area RWA</div>
+        <div class="brand-sub">Residents Welfare Association</div>
+      </div>
+    </a>
+    <nav class="nav">
+      <a class="nav-item active" href="index.html">Privacy Policy</a>
+      <a class="nav-item danger" href="delete.html">Delete Account</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;fill:var(--g800)"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+    Residents Welfare Association
+  </div>
+  <h1>Privacy <span class="accent">Policy</span></h1>
+  <p class="hero-desc">We are transparent about the data we collect and committed to keeping your personal information safe and secure.</p>
+  <div class="hero-meta">
+    <span class="meta-item">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+      Last updated: February 2026
+    </span>
+    <span class="meta-item">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+      Encrypted &amp; secure
+    </span>
+    <span class="meta-item">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      Block 13, Karachi
+    </span>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <div class="intro-card">
+    <p>The <strong>Block 13 Federal B Area Resident Portal</strong>, developed by DeskWorkSolutions, is committed to protecting your personal information. This Privacy Policy explains what data we collect, how we use it, and your rights as a resident.</p>
+    <p>By registering and using our app, you agree to the collection and use of information in accordance with this policy. We will <strong>never sell or share your data</strong> with any unauthorized third party.</p>
+  </div>
+
+  <div class="toc">
+    <div class="toc-head">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9h14V7H3v2zm0 4h14v-2H3v2zm0 4h14v-2H3v2zm16 0h2v-2h-2v2zm0-10v2h2V7h-2zm0 6h2v-2h-2v2z"/></svg>
+      Contents
+    </div>
+    <div class="toc-grid">
+      <div class="toc-item"><a class="toc-link" href="#s1"><span class="toc-num">01</span>Information We Collect</a></div>
+      <div class="toc-item"><a class="toc-link" href="#s2"><span class="toc-num">02</span>How We Use Your Information</a></div>
+      <div class="toc-item"><a class="toc-link" href="#s3"><span class="toc-num">03</span>Data Sharing &amp; Disclosure</a></div>
+      <div class="toc-item"><a class="toc-link" href="#s4"><span class="toc-num">04</span>Data Security</a></div>
+      <div class="toc-item"><a class="toc-link" href="#s5"><span class="toc-num">05</span>Device Permissions</a></div>
+      <div class="toc-item"><a class="toc-link" href="#s6"><span class="toc-num">06</span>Data Retention</a></div>
+      <div class="toc-item"><a class="toc-link" href="#s7"><span class="toc-num">07</span>Your Rights</a></div>
+      <div class="toc-item"><a class="toc-link" href="#s8"><span class="toc-num">08</span>Children's Privacy</a></div>
+      <div class="toc-item"><a class="toc-link" href="#s9"><span class="toc-num">09</span>Policy Updates</a></div>
+    </div>
+  </div>
+
+  <div class="card" id="s1">
+    <div class="card-head">
+      <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+      <div><div class="card-label">Section 01</div><div class="card-title">Information We Collect</div></div>
+    </div>
+    <div class="card-body">
+      <p>We collect the following personal information when you register and use the app:</p>
+      <ul class="blist">
+        <li><span class="dot"></span>Full name and CNIC (National Identity Card Number)</li>
+        <li><span class="dot"></span>Phone number and email address</li>
+        <li><span class="dot"></span>House number and residential address (Block 13, Federal B Area)</li>
+        <li><span class="dot"></span>Profile picture (optional)</li>
+        <li><span class="dot"></span>Vehicle registration information, if applicable</li>
+        <li><span class="dot"></span>Payment receipts and transaction IDs</li>
+        <li><span class="dot"></span>Complaint details and communication history</li>
+        <li><span class="dot"></span>Device information and push notification tokens</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" id="s2">
+    <div class="card-head">
+      <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg></div>
+      <div><div class="card-label">Section 02</div><div class="card-title">How We Use Your Information</div></div>
+    </div>
+    <div class="card-body">
+      <p>Your information is used solely for community management and resident services:</p>
+      <ul class="blist">
+        <li><span class="dot"></span>Verifying your identity as a resident of Block 13 Federal B Area</li>
+        <li><span class="dot"></span>Processing and tracking maintenance fee payments</li>
+        <li><span class="dot"></span>Managing and responding to your complaints and requests</li>
+        <li><span class="dot"></span>Sending push notifications for announcements, payment reminders, and complaint updates</li>
+        <li><span class="dot"></span>Issuing your digital resident identity card</li>
+        <li><span class="dot"></span>Maintaining community security records</li>
+        <li><span class="dot"></span>Administrative approval and account management by authorized personnel</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" id="s3">
+    <div class="card-head">
+      <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+      <div><div class="card-label">Section 03</div><div class="card-title">Data Sharing &amp; Disclosure</div></div>
+    </div>
+    <div class="card-body">
+      <p>We do not sell, rent, or trade your personal information to third parties. Your data may only be accessed in these limited circumstances:</p>
+      <ul class="blist">
+        <li><span class="dot"></span>By authorized Block 13 RWA administrators for community management purposes</li>
+        <li><span class="dot"></span>By DeskWorkSolutions technical team solely for app maintenance and support</li>
+        <li><span class="dot"></span>When required by law or lawful authority in Pakistan</li>
+      </ul>
+      <p style="margin-top:14px;"><strong>We will never share your CNIC or payment details with any unauthorized third party.</strong></p>
+    </div>
+  </div>
+
+  <div class="card" id="s4">
+    <div class="card-head">
+      <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg></div>
+      <div><div class="card-label">Section 04</div><div class="card-title">Data Security</div></div>
+    </div>
+    <div class="card-body">
+      <p>We implement appropriate technical and organizational measures to protect your data:</p>
+      <ul class="blist">
+        <li><span class="dot"></span>All data transmitted over <strong>HTTPS encrypted connections</strong></li>
+        <li><span class="dot"></span>Passwords are securely hashed and never stored in plain text</li>
+        <li><span class="dot"></span>Access to your data is restricted to authorized administrators only</li>
+        <li><span class="dot"></span>Authentication tokens expire automatically for your protection</li>
+      </ul>
+      <p style="margin-top:14px;">While we take reasonable precautions, no method of internet transmission is 100% secure. We encourage you to use a strong password and keep your credentials confidential.</p>
+    </div>
+  </div>
+
+  <div class="card" id="s5">
+    <div class="card-head">
+      <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg></div>
+      <div><div class="card-label">Section 05</div><div class="card-title">Device Permissions</div></div>
+    </div>
+    <div class="card-body">
+      <p>The app may request the following device permissions:</p>
+      <ul class="blist">
+        <li><span class="dot"></span><strong>Camera &amp; Photo Library</strong> — to upload your profile picture and payment receipts</li>
+        <li><span class="dot"></span><strong>Push Notifications</strong> — to send community announcements and updates</li>
+        <li><span class="dot"></span><strong>Internet Access</strong> — required for all app functionality</li>
+      </ul>
+      <p style="margin-top:14px;">You may revoke any permission at any time through your device Settings. Revoking certain permissions may limit app functionality.</p>
+    </div>
+  </div>
+
+  <div class="card" id="s6">
+    <div class="card-head">
+      <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+      <div><div class="card-label">Section 06</div><div class="card-title">Data Retention</div></div>
+    </div>
+    <div class="card-body">
+      <p>We retain your personal data for as long as your account is active or as needed to provide services. If you delete your account:</p>
+      <ul class="blist">
+        <li><span class="dot"></span>Your personal profile data is permanently deleted within <strong>30 days</strong></li>
+        <li><span class="dot"></span>Payment and complaint records may be retained for up to <strong>1 year</strong> for administrative and legal compliance</li>
+        <li><span class="dot"></span>Anonymized data may be retained for statistical analysis</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" id="s7">
+    <div class="card-head">
+      <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+      <div><div class="card-label">Section 07</div><div class="card-title">Your Rights</div></div>
+    </div>
+    <div class="card-body">
+      <p>As a user of this app, you have the right to:</p>
+      <ul class="blist">
+        <li><span class="dot"></span>Access the personal information we hold about you</li>
+        <li><span class="dot"></span>Request correction of inaccurate or incomplete data</li>
+        <li><span class="dot"></span>Request deletion of your account and associated data</li>
+        <li><span class="dot"></span>Opt out of push notifications via app Settings or device Settings</li>
+        <li><span class="dot"></span>Withdraw consent by deleting your account at any time</li>
+      </ul>
+      <p style="margin-top:14px;">To exercise any of these rights, contact us at the email below or use the Account Deletion feature in your app Settings.</p>
+    </div>
+  </div>
+
+  <div class="card" id="s8">
+    <div class="card-head">
+      <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+      <div><div class="card-label">Section 08</div><div class="card-title">Children's Privacy</div></div>
+    </div>
+    <div class="card-body">
+      <p>This app is intended for registered adult residents of Block 13 Federal B Area only. We do not knowingly collect personal information from individuals under the age of 18.</p>
+      <p>If you believe a minor has provided us with personal data, please contact us immediately so we can remove it.</p>
+    </div>
+  </div>
+
+  <div class="card" id="s9">
+    <div class="card-head">
+      <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"/></svg></div>
+      <div><div class="card-label">Section 09</div><div class="card-title">Policy Updates</div></div>
+    </div>
+    <div class="card-body">
+      <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last Updated" date shown at the top of this page.</p>
+      <p>Continued use of the app after any changes constitutes your acceptance of the updated policy. We encourage you to review this policy periodically.</p>
+    </div>
+  </div>
+
+  <div class="cta-card">
+    <div class="cta-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+    <h2>Get In Touch</h2>
+    <p>For privacy-related questions, data requests, or any concerns about this policy, our support team is here to help.</p>
+    <div class="cta-btns">
+      <a class="btn btn-primary" href="mailto:support23@block-13.com">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        support23@block-13.com
+      </a>
+      <a class="btn btn-outline" href="tel:+923333063849">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        +92 333 3063849
+      </a>
+    </div>
+    <p class="cta-note">
+      Block 13 Federal B Area Residents Welfare Association<br>
+      Developed by <strong><a href="https://deskworksol.com/" target="_blank" rel="noopener">DeskWorkSolutions</a></strong>
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-brand">
+    <img src="icon.png" alt="Block 13 RWA" />
+    Block 13 FB Area RWA
+  </div>
+  <p class="footer-meta" style="margin-top:6px;">&copy; 2026 Block 13 Federal B Area Residents Welfare Association. All rights reserved.</p>
+  <p class="footer-meta" style="margin-top:8px;">
+    <a href="mailto:support23@block-13.com">support23@block-13.com</a>
+    <span>·</span>
+    <a href="tel:+923333063849">+92 333 3063849</a>
+    <span>·</span>
+    Developed by <a href="https://deskworksol.com/" target="_blank" rel="noopener">DeskWorkSolutions</a>
+  </p>
+</footer>
+
+</body>
+</html>

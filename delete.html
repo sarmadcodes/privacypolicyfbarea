@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete Account — Block 13 FB Area RWA</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --g900: #1B5E20; --g800: #2E7D32; --g700: #388E3C; --g400: #66BB6A;
+      --g100: #E8F5E9; --g50: #F1F8F2; --gborder: #C8E6C9;
+      --red: #B71C1C; --red-light: #FFEBEE; --red-border: #FFCDD2;
+      --text: #111827; --text2: #4B5563; --text3: #9CA3AF;
+      --bg: #FFFFFF; --bg2: #F9FAFB; --border: #E5E7EB;
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg2); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+    /* HEADER */
+    .header { position: sticky; top: 0; z-index: 200; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .header-inner { max-width: 1040px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .brand-logo { width: 38px; height: 38px; border-radius: 9px; object-fit: contain; background: #000; padding: 2px; flex-shrink: 0; }
+    .brand-name { font-family: 'DM Serif Display', serif; font-size: 15px; color: var(--text); line-height: 1.2; white-space: nowrap; }
+    .brand-sub { font-size: 11px; color: var(--text3); font-weight: 400; margin-top: 1px; }
+    .nav { display: flex; align-items: center; gap: 6px; }
+    .nav-item { display: inline-flex; align-items: center; padding: 7px 16px; border-radius: 8px; font-size: 13px; font-weight: 500; border: 1px solid transparent; background: transparent; color: var(--text2); font-family: 'DM Sans', sans-serif; transition: all 0.18s ease; white-space: nowrap; text-decoration: none; }
+    .nav-item:hover { background: var(--g50); color: var(--g800); }
+    .nav-item.active-green { background: var(--g100); color: var(--g800); border-color: var(--gborder); font-weight: 600; }
+    .nav-item.danger { color: var(--red); }
+    .nav-item.danger:hover { background: var(--red-light); border-color: var(--red-border); }
+    .nav-item.danger.active { background: var(--red-light); border-color: var(--red-border); color: var(--red); font-weight: 600; }
+
+    /* HERO */
+    .hero { background: var(--bg); border-bottom: 1px solid var(--border); padding: 72px 24px 60px; text-align: center; position: relative; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--g900), var(--g400), var(--g900)); }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--g800); background: var(--g100); border: 1px solid var(--gborder); border-radius: 100px; padding: 5px 14px; margin-bottom: 24px; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5.5vw, 3.4rem); line-height: 1.15; font-weight: 400; color: var(--text); margin-bottom: 16px; }
+    .hero h1 .accent-red { color: var(--red); }
+    .hero-desc { font-size: 15px; color: var(--text2); max-width: 460px; margin: 0 auto 28px; line-height: 1.7; }
+    .hero-meta { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .meta-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text3); font-weight: 500; }
+    .meta-item svg { width: 13px; height: 13px; fill: var(--g700); flex-shrink: 0; }
+    .meta-item.red svg { fill: var(--red); }
+
+    /* LAYOUT */
+    .wrap { max-width: 820px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* BACK BUTTON */
+    .back-btn { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 500; color: var(--g800); background: var(--g100); border: 1px solid var(--gborder); border-radius: 100px; padding: 7px 15px; text-decoration: none; transition: all 0.16s; margin-bottom: 24px; }
+    .back-btn:hover { background: var(--gborder); }
+    .back-btn svg { width: 13px; height: 13px; fill: var(--g800); }
+
+    /* WARN BOX */
+    .warn-box { display: flex; gap: 14px; align-items: flex-start; background: var(--red-light); border: 1px solid var(--red-border); border-left: 3px solid var(--red); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 22px; }
+    .warn-box svg { width: 19px; height: 19px; fill: var(--red); flex-shrink: 0; margin-top: 2px; }
+    .warn-title { font-size: 13px; font-weight: 600; color: var(--red); margin-bottom: 4px; }
+    .warn-text { font-size: 13px; color: #7f1d1d; line-height: 1.65; }
+
+    /* CARD */
+    .card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 10px; box-shadow: var(--shadow); overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; }
+    .card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+    .card-head { display: flex; align-items: center; gap: 14px; padding: 18px 22px; border-bottom: 1px solid var(--border); background: var(--bg2); }
+    .card-icon { width: 38px; height: 38px; border-radius: 9px; background: var(--g100); border: 1px solid var(--gborder); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .card-icon svg { width: 19px; height: 19px; fill: var(--g800); }
+    .card-icon.red { background: var(--red-light); border-color: var(--red-border); }
+    .card-icon.red svg { fill: var(--red); }
+    .card-label { font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--g700); margin-bottom: 2px; }
+    .card-title { font-family: 'DM Serif Display', serif; font-size: 17px; font-weight: 400; color: var(--text); }
+    .card-body { padding: 22px; }
+    .card-body p { font-size: 14px; color: var(--text2); line-height: 1.75; margin-bottom: 12px; }
+    .card-body p:last-child { margin-bottom: 0; }
+    .card-body p strong { color: var(--text); font-weight: 600; }
+
+    /* BULLET LIST */
+    .blist { list-style: none; margin-top: 10px; }
+    .blist li { display: flex; align-items: flex-start; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text2); line-height: 1.7; }
+    .blist li:last-child { border-bottom: none; padding-bottom: 0; }
+    .blist li .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--g700); flex-shrink: 0; margin-top: 9px; }
+    .blist li strong { color: var(--text); font-weight: 600; }
+
+    /* STEPS */
+    .slist { list-style: none; margin-top: 10px; }
+    .slist li { display: flex; align-items: flex-start; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text2); line-height: 1.7; }
+    .slist li:last-child { border-bottom: none; padding-bottom: 0; }
+    .snum { width: 22px; height: 22px; border-radius: 50%; background: var(--g100); border: 1.5px solid var(--gborder); color: var(--g800); font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 3px; }
+
+    /* TABLE */
+    .dtable { width: 100%; border-collapse: collapse; margin-top: 14px; }
+    .dtable th { background: var(--bg2); border: 1px solid var(--border); padding: 9px 13px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text2); }
+    .dtable td { border: 1px solid var(--border); padding: 9px 13px; font-size: 13px; color: var(--text2); line-height: 1.5; }
+    .dtable tr:nth-child(even) td { background: var(--bg2); }
+    .tag { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 100px; font-size: 11px; font-weight: 600; }
+    .tag-del { background: var(--red-light); color: var(--red); border: 1px solid var(--red-border); }
+    .tag-keep { background: #FFF8E1; color: #E65100; border: 1px solid #FFE082; }
+    .tag-anon { background: var(--g100); color: var(--g800); border: 1px solid var(--gborder); }
+
+    /* CTA */
+    .cta-card { background: var(--bg); border: 1px solid var(--gborder); border-radius: var(--radius); padding: 44px 40px; text-align: center; margin-top: 36px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+    .cta-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--g900), var(--g400), var(--g900)); }
+    .cta-icon { width: 48px; height: 48px; border-radius: 11px; background: var(--g100); border: 1px solid var(--gborder); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+    .cta-icon svg { width: 21px; height: 21px; fill: var(--g800); }
+    .cta-card h2 { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; color: var(--text); margin-bottom: 9px; }
+    .cta-card > p { font-size: 14px; color: var(--text2); max-width: 380px; margin: 0 auto 26px; line-height: 1.7; }
+    .cta-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 22px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 21px; border-radius: 9px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.18s; }
+    .btn svg { width: 14px; height: 14px; }
+    .btn-primary { background: var(--g800); color: #fff; }
+    .btn-primary svg { fill: #fff; }
+    .btn-primary:hover { background: var(--g900); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(46,125,50,0.28); }
+    .btn-outline { background: var(--bg); color: var(--g800); border: 1.5px solid var(--gborder); }
+    .btn-outline svg { fill: var(--g800); }
+    .btn-outline:hover { border-color: var(--g800); background: var(--g100); }
+    .cta-note { font-size: 12px; color: var(--text3); line-height: 1.8; }
+    .cta-note strong { color: var(--text2); font-weight: 600; }
+    .cta-note a { color: var(--g800); text-decoration: none; font-weight: 600; }
+    .cta-note a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 30px 24px; text-align: center; }
+    .footer-brand { display: inline-flex; align-items: center; gap: 9px; font-family: 'DM Serif Display', serif; font-size: 14px; color: var(--text); margin-bottom: 8px; }
+    .footer-brand img { width: 24px; height: 24px; border-radius: 5px; object-fit: contain; background: #000; padding: 1px; }
+    .footer-meta { font-size: 12px; color: var(--text3); }
+    .footer-meta a { color: var(--g800); text-decoration: none; font-weight: 500; }
+    .footer-meta a:hover { text-decoration: underline; }
+    .footer-meta span { margin: 0 7px; opacity: 0.35; }
+
+    /* RESPONSIVE */
+    @media (max-width: 720px) {
+      .header-inner { padding: 0 16px; height: 58px; }
+      .brand-sub { display: none; }
+      .brand-name { font-size: 13px; }
+      .nav-item { padding: 6px 11px; font-size: 12px; }
+      .hero { padding: 50px 20px 42px; }
+      .wrap { padding: 32px 16px 60px; }
+      .card-head { padding: 15px 18px; }
+      .card-body { padding: 18px; }
+      .cta-card { padding: 34px 22px; }
+      .dtable { font-size: 12px; }
+      .dtable th, .dtable td { padding: 8px 10px; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.8rem; }
+      .hero-meta { gap: 12px; }
+      .cta-btns { flex-direction: column; align-items: stretch; }
+      .btn { justify-content: center; }
+      .warn-box { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img src="icon.png" alt="Block 13 RWA" class="brand-logo" />
+      <div>
+        <div class="brand-name">Block 13 FB Area RWA</div>
+        <div class="brand-sub">Residents Welfare Association</div>
+      </div>
+    </a>
+    <nav class="nav">
+      <a class="nav-item" href="index.html">Privacy Policy</a>
+      <a class="nav-item danger active" href="delete.html">Delete Account</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;fill:var(--g800)"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    Residents Welfare Association
+  </div>
+  <h1>Account <span class="accent-red">Deletion</span></h1>
+  <p class="hero-desc">Request the deletion of your Block 13 RWA account and associated personal data by following the steps below.</p>
+  <div class="hero-meta">
+    <span class="meta-item red">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+      Data deleted within 30 days
+    </span>
+    <span class="meta-item">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      Email request supported
+    </span>
+    <span class="meta-item">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+      Responds within 7 business days
+    </span>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <a class="back-btn" href="index.html">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    Back to Privacy Policy
+  </a>
+
+  <div class="warn-box">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+    <div>
+      <div class="warn-title">This action is permanent and cannot be undone</div>
+      <div class="warn-text">Once your account is deleted, your personal profile data will be permanently removed within 30 days. Payment history and complaint logs may be retained for up to 1 year for administrative and legal compliance purposes.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg></div>
+      <div><div class="card-label">Option 01</div><div class="card-title">Delete via the App</div></div>
+    </div>
+    <div class="card-body">
+      <p>The quickest way to delete your account is directly from within the Block 13 RWA app:</p>
+      <ol class="slist">
+        <li><span class="snum">1</span>Open the app and log in with your CNIC and password</li>
+        <li><span class="snum">2</span>Tap the <strong>Profile</strong> tab in the bottom navigation bar</li>
+        <li><span class="snum">3</span>Tap <strong>Settings</strong> from the profile menu</li>
+        <li><span class="snum">4</span>Scroll down and tap <strong>Delete Account</strong></li>
+        <li><span class="snum">5</span>Confirm the deletion when prompted — this is immediate and irreversible</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+      <div><div class="card-label">Option 02</div><div class="card-title">Request via Email</div></div>
+    </div>
+    <div class="card-body">
+      <p>If you cannot access the app, email us at <strong>support23@block-13.com</strong> with the following details:</p>
+      <ul class="blist">
+        <li><span class="dot"></span><strong>Subject line:</strong> Account Deletion Request</li>
+        <li><span class="dot"></span>Your full name as registered in the app</li>
+        <li><span class="dot"></span>Your CNIC number (used to log in)</li>
+        <li><span class="dot"></span>Your registered phone number or email address</li>
+        <li><span class="dot"></span>Your house number in Block 13 Federal B Area</li>
+      </ul>
+      <p style="margin-top:14px;">We will process your request and confirm deletion within <strong>7 business days</strong>. Your personal data will be permanently removed within <strong>30 days</strong> of confirmation.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon red"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></div>
+      <div><div class="card-label">Section 03</div><div class="card-title">What Gets Deleted &amp; What Is Retained</div></div>
+    </div>
+    <div class="card-body">
+      <p>A full breakdown of how your data is handled upon account deletion:</p>
+      <table class="dtable">
+        <thead><tr><th>Data Type</th><th>Action</th><th>Timeline</th></tr></thead>
+        <tbody>
+          <tr><td>Full name, CNIC, phone, email</td><td><span class="tag tag-del">Permanently Deleted</span></td><td>Within 30 days</td></tr>
+          <tr><td>Profile picture</td><td><span class="tag tag-del">Permanently Deleted</span></td><td>Within 30 days</td></tr>
+          <tr><td>House &amp; vehicle details</td><td><span class="tag tag-del">Permanently Deleted</span></td><td>Within 30 days</td></tr>
+          <tr><td>Push notification tokens</td><td><span class="tag tag-del">Permanently Deleted</span></td><td>Immediately</td></tr>
+          <tr><td>Payment receipts &amp; records</td><td><span class="tag tag-keep">Retained</span></td><td>Up to 1 year</td></tr>
+          <tr><td>Complaint history &amp; responses</td><td><span class="tag tag-keep">Retained</span></td><td>Up to 1 year</td></tr>
+          <tr><td>Anonymized usage data</td><td><span class="tag tag-anon">Anonymized</span></td><td>No personal link</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:14px;">Payment and complaint records are retained solely for administrative and legal compliance. These cannot be used to identify you once your personal profile has been deleted.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+      <div><div class="card-label">Section 04</div><div class="card-title">Your Data Rights</div></div>
+    </div>
+    <div class="card-body">
+      <p>In addition to account deletion, you have the following rights regarding your personal data at any time:</p>
+      <ul class="blist">
+        <li><span class="dot"></span>Request a copy of all personal data we hold about you</li>
+        <li><span class="dot"></span>Request correction of any inaccurate or incomplete information</li>
+        <li><span class="dot"></span>Opt out of push notifications via app Settings or your device Settings</li>
+        <li><span class="dot"></span>Request that we stop using your data for a specific purpose</li>
+      </ul>
+      <p style="margin-top:14px;">To exercise any of these rights, contact us at <strong>support23@block-13.com</strong>. We will respond within 7 business days.</p>
+    </div>
+  </div>
+
+  <div class="cta-card">
+    <div class="cta-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+    <h2>Submit Your Request</h2>
+    <p>Use the in-app option or email us directly. We will confirm your request within 7 business days.</p>
+    <div class="cta-btns">
+      <a class="btn btn-primary" href="mailto:support23@block-13.com?subject=Account%20Deletion%20Request">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        Email Deletion Request
+      </a>
+      <a class="btn btn-outline" href="tel:+923333063849">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        +92 333 3063849
+      </a>
+    </div>
+    <p class="cta-note">
+      Block 13 Federal B Area Residents Welfare Association<br>
+      Developed by <strong><a href="https://deskworksol.com/" target="_blank" rel="noopener">DeskWorkSolutions</a></strong>
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-brand">
+    <img src="icon.png" alt="Block 13 RWA" />
+    Block 13 FB Area RWA
+  </div>
+  <p class="footer-meta" style="margin-top:6px;">&copy; 2026 Block 13 Federal B Area Residents Welfare Association. All rights reserved.</p>
+  <p class="footer-meta" style="margin-top:8px;">
+    <a href="mailto:support23@block-13.com">support23@block-13.com</a>
+    <span>·</span>
+    <a href="tel:+923333063849">+92 333 3063849</a>
+    <span>·</span>
+    Developed by <a href="https://deskworksol.com/" target="_blank" rel="noopener">DeskWorkSolutions</a>
+  </p>
+</footer>
+
+</body>
+</html>
